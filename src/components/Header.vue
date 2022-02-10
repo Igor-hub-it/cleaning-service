@@ -1,7 +1,10 @@
 <template>
   <header class='header'>
     <div class="header__content">
-      <div class="header__logo">LOGO</div>
+      <div class="header__logo">
+        <img class="header__logo-img" src="/images/Logo.png" alt="Логотип">
+        <p>PinClean</p>
+      </div>
       <div class="header__categories categories">
         <div class="categories__dayly">Ежедневная</div>
         <div class="categories__after-repair">После ремонта</div>
@@ -31,7 +34,14 @@
     }
 
     &__logo {
+      display: flex;
+      gap: 20px;
+      align-items: end;
+      font-size: 30px;
+    }
 
+    &__logo-img {
+      max-height: 60px;
     }
 
     &__categories {
