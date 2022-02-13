@@ -27,7 +27,6 @@
     &__content {
       width: 80%;
       margin: auto;
-      // padding: 30px 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
