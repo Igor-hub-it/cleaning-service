@@ -56,7 +56,7 @@ export default {
         { id: '2', isActive: false, img: 'i.jpg' },
       ],
       currentSlide: 0,
-      source: '', 
+      // source: '', 
       // interval: {
       //   type: Number,
       //   default: 0,

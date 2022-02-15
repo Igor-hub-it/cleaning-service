@@ -1,5 +1,5 @@
 <template>
-  <header class='header'>
+  <header class="header">
     <div class="header__content">
       <div class="header__logo">
         <img class="header__logo-img" src="/images/Logo.png" alt="Логотип">
@@ -14,11 +14,29 @@
         <p>+7 (900) 600-90-90</p>
         <p>г. Владивосток п. Аякс 10</p>
       </div>
-      <div class="header__burger" @click="openBurgerWindow">
-        <span></span>
-        <span></span>
-        <span></span>
+      <div class="header__burger" @click="burgerActive=!burgerActive">
+        <div class="header__burger_line" :class="{ line_active: burgerActive }"></div>
+        <div class="header__burger_line" :class="{ line_active: burgerActive }"></div>
+        <div class="header__burger_line" :class="{ line_active: burgerActive }"></div>
       </div>
+      <div class="burger-shadow" v-show="burgerActive"></div>
+
+
+
+      <div class="burger-window" :class="{ burger_active: burgerActive }">
+        <div class="burger-window__categories">
+          <div class="categ-dayly burger-window__categor">Ежедневная</div>
+          <div class="categ-after-repair burger-window__categor">После ремонта</div>
+          <div class="categ-window-washing burger-window__categor">Мытье окон</div>
+        </div>
+        <div class="burger-window__contacts">
+          <p>+7 (900) 600-90-90</p>
+          <p>г. Владивосток п. Аякс 10</p>
+        </div>
+      </div>
+
+
+
     </div>
   </header>
 </template>
@@ -27,14 +45,9 @@
 export default {
   data () {
     return {
-
+      burgerActive: true
     }
   },
-  methods: {
-    openBurgerWindow () {
-
-    }
-  }
 }
 </script>
 
@@ -85,17 +98,74 @@ export default {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      z-index: 3;
+      cursor: pointer;
       @media screen and (min-width: 1050px) {
         display: none;
       }
-      span {
+      &_line {
         height: 4px;
         width: 100%;
         background: green;
+        transition: .5s;
       }
     }
   }
+  .line_active {
+    background: white;
+    transition: .5s;
+  }
+  .burger-shadow {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 200%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  .burger-window {
+    position: absolute;
+    top: 0; right: -100%;
+    width: 100%;
+    height: 2000px;
+    padding-top: 80px;
+    z-index: 2;
+    background: green;
+    color: white;
+    transition: .5s;
+    font-size: 20px;
+    &__categories {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
 
+    &__categor {
+      cursor: pointer;
+    }
+
+    &__contacts {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      cursor: pointer;
+    }
+  }
+  .burger_active {
+    position: absolute;
+    top: 0; right: 0;
+    width: 80%;
+    height: 100%;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    background: rgb(1, 173, 1);
+    transition: .5s;
+    border-bottom-left-radius: 15px;
+  }
   .category {
     width: auto;
     height: 70px;
@@ -110,7 +180,6 @@ export default {
     &:hover::before {
       transform: scaleX(1);
       transition: .5s;
-      // transform-origin: right;
     }
     &::before {
       content: '';
@@ -124,20 +193,4 @@ export default {
       transform-origin: left;
     }
   }
-  // .category:hover::after {
-  //   width: 100%;
-
-  //   &:hover {
-  //     content: '';
-  //     display: block;
-  //     position: absolute;
-  //     bottom: 0;
-  //     left: 50%;
-  //     transform: translateX(-50%);
-  //     height: 2px;
-  //     width: 0;
-  //     background-color: rgb(0, 0, 250);
-  //     transition: 0.2s ease;
-  //   }
-  // }
 </style>
