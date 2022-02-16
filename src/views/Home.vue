@@ -22,23 +22,31 @@
     </div>
     <div class="about-us">
       <div class="about-us__content">
-        <h2>Мы - профессиональная клининговая компания</h2>
+        <h1>Мы - профессиональная клининговая компания</h1>
         <p>За нашими плечами множество коммерчских заказов, а клиенты довольны качеством оказываемых услуг.
           Мы работаем как с юридическими так и с физическими лицами.
           Наша компания заключает дологсрочные контракты по уборке различных помещений: офисных, жилых, пригородних и т.д.
           Штат наших сотрудников - это хорошо обученные клинеры с опытом работы.</p>
       </div>
     </div>
-    <div class="title-of-example"><h1>Примеры наших работ</h1></div>
+    <div class="title-of-example"><h2>Примеры наших работ</h2></div>
     <div class="example">
       <div class="example__first">
-        <img class="example__first-img" src="/images/was-become2.webp" alt="">
-        <p>До и после "ежедневной" уборки </p>
+        <img class="example__first-img" src="/images/was-become1.webp" alt="">
+        <p>До и после уборки<br> "после ремонта"</p>
       </div>
       <div class="example__second">
-        <img class="example__second-img" src="/images/was-become1.webp" alt="">
-        <p>До и после уборки "после ремонта"</p>
+        <img class="example__second-img" src="/images/was-become2.webp" alt="">
+        <p>До и после<br> ежедневной уборки </p>
       </div>
+      <div class="example__third">
+        <img class="example__third-img" src="/images/was-become3.webp" alt="">
+        <p>До и после <br>генеральной уборки</p>
+      </div>
+    </div>
+    <div class="cost">
+      <h2>Средняя стоимость уборки</h2>
+      <p>Средняя стоимость одной уборки из двух клинеров составляет 1600р, за подробными расценками вы можете обратиться в категории</p>
     </div>
   </div>
 </template>
@@ -53,7 +61,7 @@ export default {
       slides: [
         { id: '0', isActive: true, img: '1.webp' },
         { id: '1', isActive: false, img: '2.webp' },
-        { id: '2', isActive: false, img: 'i.jpg' },
+        { id: '2', isActive: false, img: '3.webp' },
       ],
       currentSlide: 0,
       // source: '', 
@@ -102,7 +110,7 @@ export default {
   .home {
     width: 100%;
     margin: auto;
-    padding: 30px 0;
+    padding: 50px 0;
   }
   .slider-and-main-discriptor {
     width: 80%;
@@ -168,6 +176,7 @@ export default {
       border: 1px solid green;
       border-radius: 5px;
       font-size: 30px;
+      color: rgb(1, 173, 1);
       @media screen and (max-width: 750px) {
         width: 35px;
         height: 35px;
@@ -191,8 +200,8 @@ export default {
   }
   .about-us {
     width: 100%;
-    margin: 30px 0;
-    background: #CCFFCC;
+    margin: 50px 0;
+    background: #2eca2e;
     &__content {
       width: 80%;
       margin: auto;
@@ -212,20 +221,35 @@ export default {
     margin: auto;
     padding: 30px 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     font-size: 20px;
     @media screen and (max-width: 1350px) {
       flex-direction: column;
       gap: 30px;
     }
-    &__first-img, &__second-img {
+    &__first, &__second, &__third {
+      display: flex ;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    &__first-img, &__second-img, &__third-img {
       width: 100%;
-      height: 250px;
+      height: 200px;
+      display: flex;
       border: 2px solid green;
       border-radius: 5px;
       @media screen and (min-width: 800px) {
         width: 70%;
       }
+    }
+  }
+  .cost {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    p {
+      font-size: 18px;
     }
   }
 </style>

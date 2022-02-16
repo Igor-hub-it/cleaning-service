@@ -1,14 +1,14 @@
 <template>
   <header class="header">
     <div class="header__content">
-      <div class="header__logo">
+      <router-link :to="{ name: 'home' }" class="header__logo">
         <img class="header__logo-img" src="/images/Logo.png" alt="Логотип">
         <p>PinClean</p>
-      </div>
+      </router-link>
       <div class="header__categories">
-        <div class="categ-dayly category">Ежедневная</div>
-        <div class="categ-after-repair category">После ремонта</div>
-        <div class="categ-window-washing category">Мытье окон</div>
+        <router-link :to="{ name: 'dayly' }" class="categ-dayly category">Ежедневная</router-link>
+        <router-link :to="{ name: 'after-repair' }" class="categ-after-repair category">После ремонта</router-link>
+        <router-link :to="{ name: 'window-washing' }" class="categ-window-washing category">Мытье окон</router-link>
       </div>
       <div class="header__contacts">
         <p>+7 (900) 600-90-90</p>
@@ -20,9 +20,6 @@
         <div class="header__burger_line" :class="{ line_active: burgerActive }"></div>
       </div>
       <div class="burger-shadow" v-show="burgerActive"></div>
-
-
-
       <div class="burger-window" :class="{ burger_active: burgerActive }">
         <div class="burger-window__categories">
           <div class="categ-dayly burger-window__categor">Ежедневная</div>
@@ -34,9 +31,6 @@
           <p>г. Владивосток п. Аякс 10</p>
         </div>
       </div>
-
-
-
     </div>
   </header>
 </template>
@@ -45,7 +39,7 @@
 export default {
   data () {
     return {
-      burgerActive: true
+      burgerActive: false
     }
   },
 }
@@ -55,7 +49,7 @@ export default {
   .header {
     width: 100%;
     height: auto;
-    background: #ccffcc;
+    background: rgb(1, 173, 1);
 
     &__content {
       width: 80%;
@@ -70,6 +64,8 @@ export default {
       gap: 20px;
       align-items: end;
       font-size: 30px;
+      color: white;
+      text-decoration: none;
     }
 
     &__logo-img {
@@ -87,6 +83,8 @@ export default {
     &__contacts {
       display: flex;
       gap: 30px;
+      color: white;
+      font-size: 17px;
       @media screen and (max-width: 1050px) {
         display: none;
       }
@@ -106,7 +104,7 @@ export default {
       &_line {
         height: 4px;
         width: 100%;
-        background: green;
+        background: white;
         transition: .5s;
       }
     }
@@ -119,21 +117,25 @@ export default {
     position: absolute;
     top: 0; left: 0;
     width: 100%;
-    height: 200%;
+    height: 100%;
     z-index: 1;
     background: rgba(0, 0, 0, 0.3);
+    
   }
   .burger-window {
     position: absolute;
     top: 0; right: -100%;
     width: 100%;
-    height: 2000px;
+    height: 100%;
     padding-top: 80px;
     z-index: 2;
     background: green;
     color: white;
     transition: .5s;
     font-size: 20px;
+    @media screen and (min-width: 1050px) {
+      display: none;
+    }
     &__categories {
       display: flex;
       flex-direction: column;
@@ -174,8 +176,13 @@ export default {
     display: flex;
     align-items: center;
     cursor: pointer;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
     &:hover {
       background: #aaffaa;
+      color: black;
+      transition: .5s;
     }
     &:hover::before {
       transform: scaleX(1);
@@ -186,9 +193,8 @@ export default {
       width: 100%;
       height: 4px;
       position: absolute;
-      background: green;
-      bottom: 0;
-      left: 0;
+      background: rgb(1, 173, 1);
+      bottom: 0; left: 0;
       transform: scaleX(0);
       transform-origin: left;
     }
