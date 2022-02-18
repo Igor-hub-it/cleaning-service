@@ -25,7 +25,6 @@ export default {
 }
 #app {
   width: 100%;
-  height: auto;
   font-family: 'PT Sans', Open Sans;
   @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=PT+Sans:wght@400;700&display=swap');
 }

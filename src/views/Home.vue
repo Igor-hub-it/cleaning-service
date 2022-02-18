@@ -22,7 +22,7 @@
     </div>
     <div class="about-us">
       <div class="about-us__content">
-        <h1>Мы - профессиональная клининговая компания</h1>
+        <h1>Мы - про<wbr>фессиональная клининговая компания</h1>
         <p>За нашими плечами множество коммерчских заказов, а клиенты довольны качеством оказываемых услуг.
           Мы работаем как с юридическими так и с физическими лицами.
           Наша компания заключает дологсрочные контракты по уборке различных помещений: офисных, жилых, пригородних и т.д.
@@ -33,11 +33,11 @@
     <div class="example">
       <div class="example__first">
         <img class="example__first-img" src="/images/was-become1.webp" alt="">
-        <p>До и после уборки<br> "после ремонта"</p>
+        <p>До и после уборки<br>"после ремонта"</p>
       </div>
       <div class="example__second">
         <img class="example__second-img" src="/images/was-become2.webp" alt="">
-        <p>До и после<br> ежедневной уборки </p>
+        <p>До и после<br>ежедневной уборки </p>
       </div>
       <div class="example__third">
         <img class="example__third-img" src="/images/was-become3.webp" alt="">
@@ -221,18 +221,49 @@ export default {
     margin: auto;
     padding: 30px 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     font-size: 20px;
     @media screen and (max-width: 1350px) {
       flex-direction: column;
       gap: 30px;
     }
-    &__first, &__second, &__third {
-      display: flex ;
+    &__first {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: center;
+      p {
+        padding-left: 18px;
+        // text-align: center;
+      }
+      @media screen and (max-width: 800px) {
+        p {
+          padding-left: 75px;
+        }
+      }
+    }
+    &__second {
+      display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
     }
+
+    &__third {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: center;
+      p {
+        padding-right: 5px;
+      }
+      @media screen and (max-width: 800px) {
+        p {
+          padding-right: 65px;
+        }
+      }
+    }
+
     &__first-img, &__second-img, &__third-img {
       width: 100%;
       height: 200px;
@@ -241,6 +272,7 @@ export default {
       border-radius: 5px;
       @media screen and (min-width: 800px) {
         width: 70%;
+        height: 200px;
       }
     }
   }

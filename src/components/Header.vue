@@ -11,8 +11,14 @@
         <router-link :to="{ name: 'window-washing' }" class="categ-window-washing category">Мытье окон</router-link>
       </div>
       <div class="header__contacts">
-        <p>+7 (900) 600-90-90</p>
-        <p>г. Владивосток п. Аякс 10</p>
+        <div class="header__telephone">
+          <img class="header__phone-img" src="/telephone.png" alt="">
+          <p>+7 (900) 600-90-90</p>
+        </div>
+        <div class="header__adress">
+          <img class="header__adress-img" src="/adress.png" alt="">
+          <p>г. Владивосток п. Аякс 10</p>
+        </div>
       </div>
       <div class="header__burger" @click="burgerActive=!burgerActive">
         <div class="header__burger_line" :class="{ line_active: burgerActive }"></div>
@@ -22,9 +28,9 @@
       <div class="burger-shadow" v-show="burgerActive"></div>
       <div class="burger-window" :class="{ burger_active: burgerActive }">
         <div class="burger-window__categories">
-          <div class="categ-dayly burger-window__categor">Ежедневная</div>
-          <div class="categ-after-repair burger-window__categor">После ремонта</div>
-          <div class="categ-window-washing burger-window__categor">Мытье окон</div>
+          <router-link :to="{ name: 'dayly' }" class="categ-dayly burger-window__categor">Ежедневная</router-link>
+          <router-link :to="{ name: 'after-repair' }" class="categ-after-repair burger-window__categor">После ремонта</router-link>
+          <router-link :to="{ name: 'window-washing' }" class="categ-window-washing burger-window__categor">Мытье окон</router-link>
         </div>
         <div class="burger-window__contacts">
           <p>+7 (900) 600-90-90</p>
@@ -90,6 +96,18 @@ export default {
       }
     }
 
+    &__telephone, &__adress {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    &__phone-img, &__adress-img {
+      width: 20px;
+      height: 20px;
+      color: white;
+    }
+
     &__burger {
       width: 30px;
       height: 25px;
@@ -120,7 +138,6 @@ export default {
     height: 100%;
     z-index: 1;
     background: rgba(0, 0, 0, 0.3);
-    
   }
   .burger-window {
     position: absolute;
@@ -131,11 +148,9 @@ export default {
     z-index: 2;
     background: green;
     color: white;
-    transition: .5s;
+    transition: 0.5s;
     font-size: 20px;
-    @media screen and (min-width: 1050px) {
-      display: none;
-    }
+    // display: none;
     &__categories {
       display: flex;
       flex-direction: column;
@@ -145,6 +160,8 @@ export default {
 
     &__categor {
       cursor: pointer;
+      text-decoration: none;
+      color: white;
     }
 
     &__contacts {
@@ -167,6 +184,7 @@ export default {
     background: rgb(1, 173, 1);
     transition: .5s;
     border-bottom-left-radius: 15px;
+    transform-origin: right;
   }
   .category {
     width: auto;
