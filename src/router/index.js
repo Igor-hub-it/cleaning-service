@@ -16,9 +16,9 @@ const routes = [
     component: lazyView('Dayly'),
   },
   {
-    path: '/after-repair',
-    name: 'after-repair',
-    component: lazyView('After-repair'),
+    path: '/general',
+    name: 'general',
+    component: lazyView('General'),
   },
   {
     path: '/window-washing',

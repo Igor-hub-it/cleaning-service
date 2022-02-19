@@ -1,18 +1,22 @@
 <template>
-  <div class="main">
-    <div class="dayly-clining">
-      <h1 class="dayly-clining__title">Ежедневная уборка</h1>
-      <div class="dayly-clining__services services">
-        <h2 class="services__title">Что входит в уборку квартиры</h2>
-        <div class="services__all-rooms">
+  <main>
+    <div class="general-clining">
+      <h1 class="general-clining__title">Генеральная уборка</h1>
+      <div class="services">
+        <h2 class="services__title">Что входит в генеральную уборку</h2>
+        <div class="services__general">
           <div class="services__everywhere">
             <h2>Уборка во всех<br>комнатах</h2>
             <div class="block-of-services">
               <ul>
+                <li>Уберёмся в гардеробной</li>
                 <li>Помоем пол</li>
-                <li>Протрем пыль</li>
+                <li>Обеспылим стены</li>
+                <li>Протрём пыль</li>
                 <li>Помоем зеркала</li>
+                <li>Помоем люстру</li>
                 <li>Вынесем мусор</li>
+                <li>Почистим ковры</li>
                 <li>Помоем окна изнутри</li>
                 <li>Пропылесосим ковёр</li>
               </ul>
@@ -28,6 +32,10 @@
                 <li>Помоем плиту</li>
                 <li>Помоем холодильник</li>
                 <li>Помоем микроволновку</li>
+                <li>Помоем посуду</li>
+                <li>Помоем фасады кухонных шкафов</li>
+                <li>Помоем вытяжку</li>
+                <li>Помоем духовку</li>
               </ul>
             </div>
           </div>
@@ -41,51 +49,47 @@
                 <li>Помоем унитаз</li>
                 <li>Протрем зеркала</li>
                 <li>Уберем лоток за животным</li>
+                <li>Очистим плитку от налета</li>
+                <li>Выведем пятна на ванной</li>
+                <li>Уберемся в туалетном столике</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <!-- что не входит в обязанности -->
-      <div class="not-included-in-clining">
-        <h2 class="not-included-in-clining__title">Что не входит в уборку</h2>
-        <h3 class="not-included-in-clining__subtitle">Попробуйте генеральную уборку, если вам нужна услуга из списка ниже</h3>
-        <div class="not-included-in-clining__content">
-          <div class="not-included-in-clining__non-service">Выведение глубоких пятен</div>
-          <div class="not-included-in-clining__non-service">Больше двух клинеров на уборке</div>
-          <div class="not-included-in-clining__non-service">Обеспыливание стен</div>
-          <div class="not-included-in-clining__non-service">Уборка в труднодоступных местах</div>
-          <div class="not-included-in-clining__non-service">Уборка в кладовке</div>
-          <div class="not-included-in-clining__non-service">Мытье потолков</div>
+      <div class="differences">
+        <h2 class="differences__title">Отличия от "ежедневной" уборки</h2>
+        <div class="differences__of-service">
+          <div class="differences__service">Выведение глубоких пятен</div>
+          <div class="differences__service">Больше двух клинеров на уборке</div>
+          <div class="differences__service">Обеспыливание стен</div>
+          <div class="differences__service">Уборка в труднодоступных местах</div>
+          <div class="differences__service">Уборка в кладовке</div>
+          <div class="differences__service">Вынос крупногаборитного мусора</div>
+          <div class="differences__service">Мытье потолков</div>
+          <div class="differences__service">Выезд старшего клинера</div>
+          <div class="differences__service">Спецоборудование у клинеров</div>
+          <div class="differences__service">Уборка в пригороде</div>
+          <div class="differences__service">Обеспыливание мебели</div>
+          <div class="differences__service">Мытье окон с внешней стороны</div>
         </div>
       </div>
       <div class="cost">
         <h2 class="cost__title">Стоимость уборки</h2>
-        <div class="cost__variants">
-          <div class="cost__one-room">
-            <h3>Однокомнатная</h3>
-            <p>от 1500р</p>
-          </div>
-          <div class="cost__two-rooms">
-            <h3>Двухкомнатная</h3>
-            <p>от 2000р</p>
-          </div>
-          <div class="cost__three-rooms">
-            <h3>Трёхкомнатная</h3>
-            <p>от 2500р</p>
-          </div>
-        </div>
+        <div class="cost__text">
+          <p class="cost__subtitle">Минимальная цена генеральной уборки составляет 6000р</p>
+          <p class="cost__discriptor">Цены обсуждаются индивидуально при выезде старшего клинера на место уборки(выезд бесплатный)</p></div>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <style lang="scss" scoped>
-  .main {
+  main {
     width: 100%;
     padding: 50px 0;
   }
-  .dayly-clining {
+  .general-clining {
     width: 80%;
     margin: auto;
     &__title {
@@ -94,16 +98,16 @@
       font-size: 45px;
       color: #4c4c4c;
     }
-    &__services {
-      text-align: center;
-      color: #656565;
-    }
   }
   .services {
     &__title {
       margin-bottom: 30px;
+      text-align: center;
+      color: #656565;
     }
-    &__all-rooms {
+    &__general {
+      text-align: center;
+      color: #656565;
       display: flex;
       justify-content: space-between;
       @media screen and (max-width: 900px) {
@@ -134,7 +138,7 @@
       margin-bottom: 20px;
     }
   }
-  .not-included-in-clining {
+  .differences {
     color: #656565;
 
     &__title {
@@ -146,7 +150,7 @@
       text-align: center;
     }
 
-    &__content {
+    &__of-service {
       margin-top: 30px;
       display: grid;
       justify-content: space-between;
@@ -160,7 +164,7 @@
       }
     }
 
-    &__non-service {
+    &__service {
       padding: 20px;
       text-align: center;
       color: white;
@@ -171,33 +175,24 @@
     }
   }
   .cost {
-    margin: 50px 0;
+    padding: 30px 0;
     &__title {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       text-align: center;
       color: #656565;
     }
-    &__variants {
-      display: grid;
-      justify-content: space-between;
-      grid-template-columns: 30% 30% 30%;
-      gap: 30px;
-      @media screen and (max-width: 1050px) {
-        grid-template-columns: 45% 45%;
-      }
-      @media screen and (max-width: 800px) {
-        grid-template-columns: 100%;       
-      }
-    }
-    &__one-room, &__two-rooms, &__three-rooms {
+    &__text {
       padding: 35px;
       border: 1px #4c4c4c solid;
       border-radius: 10px;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-      p {
-        margin-top: 20px;
-        font-size: 30px;
-      }
+    }
+    &__subtitle {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+    &__discriptor {
+      font-size: 20px;
     }
   }
 </style>

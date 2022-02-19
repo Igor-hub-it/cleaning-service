@@ -7,7 +7,7 @@
       </router-link>
       <div class="header__categories">
         <router-link :to="{ name: 'dayly' }" class="categ-dayly category">Ежедневная</router-link>
-        <router-link :to="{ name: 'after-repair' }" class="categ-after-repair category">После ремонта</router-link>
+        <router-link :to="{ name: 'general' }" class="categ-after-repair category">Генеральная</router-link>
         <router-link :to="{ name: 'window-washing' }" class="categ-window-washing category">Мытье окон</router-link>
       </div>
       <div class="header__contacts">
@@ -29,7 +29,7 @@
       <div class="burger-window" :class="{ burger_active: burgerActive }">
         <div class="burger-window__categories">
           <router-link :to="{ name: 'dayly' }" class="categ-dayly burger-window__categor">Ежедневная</router-link>
-          <router-link :to="{ name: 'after-repair' }" class="categ-after-repair burger-window__categor">После ремонта</router-link>
+          <router-link :to="{ name: 'general' }" class="categ-general burger-window__categor">Генеральная</router-link>
           <router-link :to="{ name: 'window-washing' }" class="categ-window-washing burger-window__categor">Мытье окон</router-link>
         </div>
         <div class="burger-window__contacts">
