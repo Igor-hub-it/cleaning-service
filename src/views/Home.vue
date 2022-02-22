@@ -29,24 +29,50 @@
           Штат наших сотрудников - это хорошо обученные клинеры с опытом работы.</p>
       </div>
     </div>
+    <div class="cost">
+        <h2 class="cost__title">Стоимость уборки</h2>
+        <h3 class="cost__subtitle">Представленные цены примерны, за полной информацией обращайтесь<br> в раздел категорий или по номеру телефона</h3>
+        <div class="cost__variants">
+          <div class="cost__one-room">
+            <h3>Однокомнатная</h3>
+            <ul>
+              <li>Ежедневная от 1500р</li>
+              <li>Генеральная от 2500р</li>
+              <li>Окна от 800р</li>
+            </ul>
+          </div>
+          <div class="cost__two-rooms">
+            <h3>Двухкомнатная</h3>
+            <ul>
+              <li>Ежедневная от 2500р</li>
+              <li>Генеральная от 5500р</li>
+              <li>Окна от 1300р</li>
+            </ul>
+          </div>
+          <div class="cost__three-rooms">
+            <h3>Трёхкомнатная</h3>
+            <ul>
+              <li>Ежедневная от 3500р</li>
+              <li>Генеральная от 7500р</li>
+              <li>Окна от 1800р</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     <div class="title-of-example"><h2>Примеры наших работ</h2></div>
     <div class="example">
       <div class="example__first">
-        <img class="example__first-img" src="/images/was-become1.webp" alt="">
         <p>До и после уборки<br>"после ремонта"</p>
+        <img class="example__first-img" src="/images/was-become1.webp" alt="">
       </div>
       <div class="example__second">
         <img class="example__second-img" src="/images/was-become2.webp" alt="">
-        <p>До и после<br>ежедневной уборки </p>
+        <p>До и после<br>ежедневной уборки</p>
       </div>
       <div class="example__third">
-        <img class="example__third-img" src="/images/was-become3.webp" alt="">
         <p>До и после <br>генеральной уборки</p>
+        <img class="example__third-img" src="/images/was-become3.webp" alt="">
       </div>
-    </div>
-    <div class="cost">
-      <h2>Средняя стоимость уборки</h2>
-      <p>Средняя стоимость одной уборки из двух клинеров составляет 1600р, за подробными расценками вы можете обратиться в категории</p>
     </div>
   </div>
 </template>
@@ -128,21 +154,22 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    color: #4c4c4c;
     hr {
       width: 100%;
       height: 1px;
       background: green;
     }
     @media screen and (max-width: 750px) {
-      width: 80%;
+      width: 100%;
     }
   }
   .slider {
     width: 60%;
     height: 350px;
-    border: 2px solid green;
-    border-radius: 5px;
-    display: flex;
+    border: 1px #4c4c4c solid;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;    display: flex;
     align-items: center;
     @media screen and (max-width: 750px) {
       width: 100%;
@@ -152,7 +179,7 @@ export default {
     &__slds {
       width: 100%;
       height: 100%;
-      border-radius: 3px;
+      border-radius: 8px;
       transition: 1s;
     }
 
@@ -199,9 +226,11 @@ export default {
     }
   }
   .about-us {
-    width: 100%;
-    margin: 50px 0;
-    background: #2eca2e;
+    width: 80%;
+    margin: 50px auto;
+    border: 1px rgb(88, 214, 88) solid;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     &__content {
       width: 80%;
       margin: auto;
@@ -212,8 +241,8 @@ export default {
     }
   }
   .title-of-example {
-    width: 80%;
-    margin: auto;
+    text-align: center;
+    color: #656565;
   }
   .example {
     height: auto;
@@ -221,67 +250,86 @@ export default {
     margin: auto;
     padding: 30px 0;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 30px;
     font-size: 20px;
     @media screen and (max-width: 1350px) {
-      flex-direction: column;
       gap: 30px;
     }
-    &__first {
+    &__first, &__second, &__third {
+      width: 70%;
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
+      border: 1px rgb(88, 214, 88) solid;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      border-radius: 10px;
       align-items: flex-start;
       text-align: center;
       p {
-        padding-left: 18px;
-        // text-align: center;
+        margin: auto;
+        padding: 30px;
+        font-size: 25px;
+        color: #444444;
       }
-      @media screen and (max-width: 800px) {
-        p {
-          padding-left: 75px;
-        }
+      @media screen and (max-width: 780px) {
+        width: 100%;
+        flex-direction: column;
       }
     }
     &__second {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    &__third {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      text-align: center;
-      p {
-        padding-right: 5px;
-      }
-      @media screen and (max-width: 800px) {
-        p {
-          padding-right: 65px;
-        }
+      @media screen and (max-width: 780px) {
+        flex-direction: column-reverse;
       }
     }
-
     &__first-img, &__second-img, &__third-img {
-      width: 100%;
-      height: 200px;
+      height: 100%;
+      min-height: 220px;
+      max-height: 300px;
       display: flex;
-      border: 2px solid green;
       border-radius: 5px;
-      @media screen and (min-width: 800px) {
-        width: 70%;
-        height: 200px;
+      @media screen and (max-width: 800px) {
+        width: 100%;
       }
     }
   }
   .cost {
     width: 80%;
-    height: auto;
     margin: auto;
-    p {
-      font-size: 18px;
+    padding-bottom: 30px;
+    &__title {
+      text-align: center;
+      color: #4c4c4c;
+    }
+    &__subtitle {
+      margin: 20px 0;
+      text-align: center;
+      color: #656565;
+    }
+    &__variants {
+      display: grid;
+      justify-content: space-between;
+      grid-template-columns: 30% 30% 30%;
+      gap: 30px;
+      @media screen and (max-width: 1050px) {
+        grid-template-columns: 45% 45%;
+      }
+      @media screen and (max-width: 800px) {
+        grid-template-columns: 100%;       
+      }
+    }
+    &__one-room, &__two-rooms, &__three-rooms {
+      padding: 35px;
+      border: 1px #4c4c4c solid;
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      p {
+        margin-top: 20px;
+        font-size: 30px;
+      }
+      li {
+        margin-top: 10px;
+        font-size: 20px;
+      }
     }
   }
 </style>
